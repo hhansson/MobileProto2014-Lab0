@@ -10,7 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
-
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -21,9 +22,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_frag);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new MyFragment())
+                    .add(R.id.container, new MyFragment(), "MyFragment")
                     .commit();
         }
+
     }
 
 
@@ -42,6 +44,10 @@ public class MainActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
+        }
+        if (id == R.id.add_text) {
+            MyFragment frag = (MyFragment) getFragmentManager().findFragmentByTag("MyFragment");
+            frag.clearText();
         }
         return super.onOptionsItemSelected(item);
     }

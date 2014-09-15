@@ -8,32 +8,29 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".frag$PlaceholderFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:id="@+id/hello_world"/>
+
     <ListView
         android:id="@+id/my_list_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_below="@id/hello_world"/>
 
-    <Button android:text="New"
+    <EditText
+        android:id="@+id/add_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:layout_below="@id/my_list_view"/>
+
+    <Button android:text="@string/button_text"
         android:id="@+id/new_but"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/new_but"
-        android:layout_alignParentBottom="true"/>
-    
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="600px">
-        
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tab"/>
-    </ScrollView>
+        android:layout_below="@id/add_text"/>
 
 </RelativeLayout>

@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".frag" >
     <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
+        android:title="Settings"
         android:showAsAction="never" />
 </menu>
